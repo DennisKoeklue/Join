@@ -7,17 +7,20 @@
     position: fixed;
     top: 96px;
     left: 232px;
+    bottom: 0;
     width: 456px;
-    height: 100vh;
     background-color: #ffffff;
     box-shadow: 4px 0 6px 0 rgba(0, 0, 0, 0.08);
-    padding: 24px 48px 0 48px;
+    padding: 24px 48px 24px 48px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .contacts #add-contact {
     width: 100%;
     justify-content: center;
     transition: all 125ms linear;
+    flex-shrink: 0;
 }
 
 .contacts #add-contact:hover {
@@ -42,8 +45,6 @@
     flex-direction: column;
     gap: 8px;
     justify-content: flex-start;
-    overflow-y: auto;
-    flex: 1;
 }
 
 .contacts .contact-list .contact-list-items {
@@ -100,7 +101,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 122, 0, 1);
+    /* background-color: rgba(255, 122, 0, 1); */
     border: 2px solid rgba(255, 255, 255, 1);
     border-radius: 50%;
     color: rgba(255, 255, 255, 1);

@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body>
+<body onload="createContactList()">
     <header class="header">
         <div class="text">Kanban Project Management Tool</div>
         <div class="icons">
@@ -68,78 +68,6 @@
           <img src="../assets/img/add-person-contact.svg" alt="" />
         </button>
             <div class="contact-list">
-                <div class="contact-list-items">
-                    <h3 class="contact-alphabet">A</h3>
-                    <div id="contact-divider">
-                        <img src="../assets/img/devider-contact-list.svg" alt="" />
-                    </div>
-                    <div class="contact-container">
-                        <div class="contact-badge">AM</div>
-                        <div class="contactDetails">
-                            <h3 class="contactName">Anton Mayer</h3>
-                            <span class="contactEmail">antonm@gmail.com</span>
-                        </div>
-                    </div>
-                    <div class="contact-container">
-                        <div class="contact-badge">AS</div>
-                        <div class="contactDetails">
-                            <h3 class="contactName">Anja Schulz</h3>
-                            <span class="contactEmail">schulz@hotmail.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-list-items">
-                    <h3 class="contact-alphabet">B</h3>
-                    <div id="contact-divider">
-                        <img src="../assets/img/devider-contact-list.svg" alt="" />
-                    </div>
-                    <div class="contact-container">
-                        <div class="contact-badge">BZ</div>
-                        <div class="contactDetails">
-                            <h3 class="contactName">Benedikt Ziegler</h3>
-                            <span class="contactEmail">benedikt@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-list-items">
-                    <h3 class="contact-alphabet">D</h3>
-                    <div id="contact-divider">
-                        <img src="../assets/img/devider-contact-list.svg" alt="" />
-                    </div>
-                    <div class="contact-container">
-                        <div class="contact-badge">DE</div>
-                        <div class="contactDetails">
-                            <h3 class="contactName">David Eisenberg</h3>
-                            <span class="contactEmail">davidberg@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-list-items">
-                    <h3 class="contact-alphabet">A</h3>
-                    <div id="contact-divider">
-                        <img src="../assets/img/devider-contact-list.svg" alt="" />
-                    </div>
-                    <div class="contact-container">
-                        <div class="contact-badge"></div>
-                        <div class="contactDetails">
-                            <h3 class="contactName">Anton Mayer</h3>
-                            <span class="contactEmail">antonm@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-list-items">
-                    <h3 class="contact-alphabet">A</h3>
-                    <div id="contact-divider">
-                        <img src="../assets/img/devider-contact-list.svg" alt="" />
-                    </div>
-                    <div class="contact-container" onclick="contactContainerChangeColor()">
-                        <div class="contact-badge"></div>
-                        <div class="contactDetails">
-                            <h3 class="contactName">Anton Mayer</h3>
-                            <span class="contactEmail">antonm@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
         <section class="contact-dashboard">
@@ -207,18 +135,18 @@
 
 
                             <div class="add-contact-buttons">
-                                <button class="secondary-btn-default-icon">Cancel <img src="" alt="" /></button>
-                                <button class="primary-btn-default-icon">Create contact<img src="../assets/img/create-contact-check.svg" alt="" /></button>
+                                <button class="secondary-btn-default-icon" id="cancel-btn" onclick="closePopupOverlay()">Cancel <img src="" alt="" /></button>
+                                <button class="primary-btn-default-icon" id="createContact-btn">Create contact<img src="../assets/img/create-contact-check.svg" alt="" /></button>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
             </div>
     </main>
 
+    <script src="../script/data-bank.js"></script>
+    <script src="../script/contact-Templates.js"></script>
     <script src="../script/contacts.js"></script>
 </body>
 
