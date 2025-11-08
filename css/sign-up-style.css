@@ -43,7 +43,7 @@ footer{
 }
 
 .footer_links{
-  width: 230px;
+  width: 290px;
   display: flex;
   justify-content: center;
   gap: 30px;
