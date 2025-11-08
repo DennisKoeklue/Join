@@ -64,7 +64,7 @@
             <label for="title">
               Title<span class="required">*</span>
             </label>
-            <input id="title" type="text" placeholder="Enter a title">
+            <input id="title" type="text" oninput="addTaskCheak()" placeholder="Enter a title">
           </div>
         </form>
         <form>
@@ -104,8 +104,12 @@
         <form>
           <div class="field">
             <div class="field">
-              <label for="assigned">Assigned to</label>
-              <input class="input-icon-arrow-down" id="assigned" type="text" placeholder="Select contacts to assign">
+              <label>Assigned to </label>
+              <!-- <input class="input-icon-arrow-down" id="assigned" type="text" placeholder="Select contacts to assign"> -->
+              <select class="input-icon-arrow-down custom-select-select" for="assigned">Assigned to
+                <option>Select contacts to</option>
+                <option>Render Names#</option>
+              </select>
             </div>
           </div>
         </form>
@@ -114,26 +118,32 @@
             <label for="category">
               Category<span class="required">*</span>
             </label>
-            <div>
-              <input class="input-icon-arrow-down" id="category" type="text" placeholder="Select task category">
-            </div>
+            <select class="input-icon-arrow-down custom-select-select">
+              <option>Select task category</option>
+              <option>Technical Task</option>
+              <option>User Story</option>
+            </select>
           </div>
         </form>
         <form>
           <div class="field">
             <label for="subtask">Subtasks</label>
-            <input id="subtask" type="text" placeholder="Add new subtask">
+            <input id="subtask" type="text" class="input-icon-close input-icon-cheak" placeholder="Add new subtask">
           </div>
         </form>
       </section>
     </main>
     <section class="footer-add-task">
-      <span>*This field is required</span>
+      <p class="required">*
+        <span style="color: #000000;">This field is required</span>
+      </p>
       <div>
         <button class="btn-priority">Clear X</button>
         <button class="btn-priority">Create Task </button>
       </div>
     </section>
+
 </body>
+<script src="../javascript/add-task.js"></script>
 
 </html>
