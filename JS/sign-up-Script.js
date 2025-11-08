@@ -99,7 +99,6 @@ function UpdateIcon(input, iconDiv) {
         iconDiv.classList.remove("eye_switch")
     }
 }
-
 // ===================== FUNCTION: togglePassword ===================== //
 // This function toggles the input type between "password" and "text".
 //
@@ -107,13 +106,16 @@ function UpdateIcon(input, iconDiv) {
 // - If type is "text" → hide the password and show closed-eye icon.
 
 function togglePassword(input, iconDiv) {
- if (input.type === "password") {
+  if (input.value.length > 0) {
+    
+    if (input.type === "password") {
   input.type = "text";
   iconDiv.innerHTML = eyeOpen;
  }else{
   input.type = "password"
   iconDiv.innerHTML = eyeClosed;
  }
+}
 }
 
 // Test function for Password abglich

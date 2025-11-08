@@ -233,6 +233,10 @@ button:disabled{
   cursor: pointer;
 }
 
+#privacy-policy{
+  font-size: 15px;
+}
+
 .message{
   display: flex;
   justify-content: center;
