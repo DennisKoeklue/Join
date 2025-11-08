@@ -36,7 +36,7 @@ const backArrow = document.getElementById('back-arrow');
 const checkbox = document.getElementById('checkbox');
 const button =  document.getElementById('submit_button');
 const error = document.getElementById('error-message')
-
+const form = document.getElementById('signupForm');
 
 
 // ===================== EVENT LISTENERS ===================== //
@@ -45,17 +45,40 @@ const error = document.getElementById('error-message')
 // When text is entered, the lock icon switches to an eye icon.
 passwordInput.addEventListener('input', () =>{
   UpdateIcon(passwordInput, iconPasswordDivMain);
+  updateSubmitButtonState();
 });
+
 passwordConfirm.addEventListener('input', () =>{
   UpdateIcon(passwordConfirm, iconPasswordDivConfirm);
   checkPassword();
+  updateSubmitButtonState();
 });
+
 backArrow.addEventListener('click', () =>{
   //window.location.href = '#';
   console.log("SVG clicked"); // Als test 
   
-})
-checkbox.addEventListener('change', () => { button.disabled = !checkbox.checked;})
+});
+
+checkbox.addEventListener('change', () => { //button.disabled = !checkbox.checked;
+  updateSubmitButtonState();
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (passwordInput.value !== passwordConfirm.value) {
+    error.textContent = "Your passwords don't match. Please try again.";
+    passwordConfirmDiv.classList.add('error-input-red');
+    return;
+  }
+  showSuccessMessage();
+
+  // optional: Formular zurücksetzen
+  form.reset();
+  button.disabled = true;
+  UpdateIcon(passwordInput, iconPasswordDivMain);
+  UpdateIcon(passwordConfirm, iconPasswordDivConfirm);
+});
 
 
 // ===================== FUNCTION: UpdateIcon ===================== //
@@ -113,4 +136,19 @@ function checkPassword() {
     console.log("Passwort überstimmen nicht");
     
   }
+}
+
+function showSuccessMessage() {
+  const msg = document.getElementById('message');
+  msg.classList.add('show');
+
+  setTimeout(() => {
+    msg.classList.remove('show');
+  }, 3000);
+}
+
+
+function updateSubmitButtonState() {
+  const passwordsMatch = passwordInput.value === passwordConfirm.value && passwordConfirm.value.length > 0;
+  button.disabled = !(passwordsMatch && checkbox.checked);
 }
