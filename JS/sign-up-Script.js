@@ -89,19 +89,26 @@ form.addEventListener('submit', (e) => {
 //   and make the icon clickable (to toggle password visibility).
 
 function UpdateIcon(input, iconDiv) {
-    if (input.value.length > 0) {
-        iconDiv.innerHTML = eyeClosed;
-        iconDiv.onclick = () => togglePassword(input, iconDiv);
-        iconDiv.classList.add("eye_switch")
-    } else if (input.value.length === 0) {
-        iconDiv.innerHTML = lockIcon
-        iconDiv.onclick = null;
-        iconDiv.classList.remove("eye_switch")
+  if (input.value.length > 0) {
+    // Eingabe vorhanden → Icon bleibt, Typ bleibt unverändert
+    // Das Auge zeigt je nach aktuellem Zustand (password/text)
+    if (input.type === "password") {
+      iconDiv.innerHTML = eyeClosed;
+    } else {
+      iconDiv.innerHTML = eyeOpen;
     }
+    iconDiv.onclick = () => togglePassword(input, iconDiv);
+    iconDiv.classList.add("eye_switch");
+  } 
+  else {
+    // Nur wenn das Feld WIRKLICH leer ist → alles zurücksetzen
+    iconDiv.innerHTML = lockIcon;
+    iconDiv.onclick = null;
+    iconDiv.classList.remove("eye_switch");
 
-    if (input.type !== "password") {
-      input.type = "password";
-    }
+    // Jetzt darf er den Type wieder zurücksetzen
+    input.type = "password";
+  }
 }
 // ===================== FUNCTION: togglePassword ===================== //
 // This function toggles the input type between "password" and "text".
