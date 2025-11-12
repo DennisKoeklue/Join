@@ -29,6 +29,7 @@
     <!-- adding Main CSS Style-Sheet -->
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/privacy-policy.css">
+    <link rel="stylesheet" href="../css/sidebar-responsiv.css">
   </head>
 <body>
    <div class="body-div">
@@ -76,9 +77,10 @@
         <a href="../html/help.html" class="help">
           <img src="../assets/img/help.svg" alt="help" id="help" />
         </a>
-        <div class="user-icon"></div>
+        <div class="user-icon" id="user-icon" onclick="tooglemenu()"></div>
       </div>
-      <div class="dropDown-menu hide">
+      <div class="dropDown-menu" id="dropDown-menu">
+        <a href="../html/help.html" class="hide">Help</a>
         <a href="../html/legal-notice.html">Legal notice</a>
         <a href="../html/privacy-policy.html">Privacy Policy</a>
         <a href="">Log Out</a>
@@ -89,4 +91,5 @@
     </div>
   </div>
 </body>
+<script src="../JS/sidebar_and_header_script.js"></script>
 </html>
