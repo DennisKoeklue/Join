@@ -64,7 +64,7 @@
             <label for="title">
               Title<span class="required">*</span>
             </label>
-            <input id="title" type="text" oninput="addTaskCheak()" placeholder="Enter a title">
+            <input id="title" type="text" placeholder="Enter a title" required>
           </div>
         </form>
         <form>
@@ -79,7 +79,8 @@
               Due date<span class="required">*</span>
             </label>
             <div>
-              <input class="input-icon-calender" id="due-date" type="text" placeholder="dd/mm/yyyy">
+              <input class="input-icon-calender" id="duedate" type="date" placeholder="dd/mm/yyyy" required
+                min="2025-01-01" max="2030-12-31">
             </div>
         </form>
         </div>
@@ -91,17 +92,17 @@
         <form>
           <div class="field">
             <label class="field-label">Priority</label>
-            <div class="button-priority">              
-              <input type="radio" id="prio-urgent" name="priority" value="urgent" class="prio-input" checked>
-              <label for="prio-urgent" class="btn-priority btn-priority-flex">
+            <div class="button-priority">
+              <input type="radio" name="priority" value="urgent" class="prio-input">
+              <label for="prio-urgent" id="prio-urgent" onclick="PrioBTN()" class="btn-priority btn-priority-flex">
                 Urgent
-                <img src="../assets/img/PrioUP-icon.svg" alt="">
-              </label>              
-              <input type="radio" id="prio-medium" name="priority" value="medium" class="prio-input">
+                <img src="../assets/img/PrioUP-icon.svg" id="prio-urgent-svg" alt="">
+              </label>
+              <input type="radio" id="prio-medium" name="priority" value="medium" class="prio-input" checked>
               <label for="prio-medium" class="btn-priority btn-priority-flex">
                 Medium
                 <img src="../assets/img/PrioMedium-icon.svg" class="btn-priority-medium" alt="">
-              </label>              
+              </label>
               <input type="radio" id="prio-low" name="priority" value="low" class="prio-input">
               <label for="prio-low" class="btn-priority btn-priority-flex">
                 Low
@@ -109,7 +110,6 @@
               </label>
             </div>
           </div>
-
         </form>
         <form>
           <div class="field">
@@ -128,7 +128,7 @@
             <label for="category">
               Category<span class="required">*</span>
             </label>
-            <select id="category" class="input-icon-arrow-down custom-select-select">
+            <select id="category" class="input-icon-arrow-down custom-select-select" required>
               <option>Select task category</option>
               <option>Technical Task</option>
               <option>User Story</option>
@@ -149,10 +149,9 @@
       </p>
       <div>
         <button class="btn-priority">Clear X</button>
-        <button class="btn-priority">Create Task </button>
+        <button class="btn-priority" onclick=createTask()>Create Task </button>
       </div>
     </section>
-
 </body>
 <script src="../script/add-task.js"></script>
 
