@@ -57,6 +57,8 @@ main{
   align-items: center;
   padding: 20px 40px;
   z-index: 1; /* unter Sidebar, wenn überlappt */
+  position: sticky;
+  top: 0;
 }
 
 
